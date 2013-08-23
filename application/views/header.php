@@ -17,9 +17,29 @@
 
 <body>
 <div id="wrapper">
+
+<?php
+	
+	$login = site_url('/auth');
+	$join = site_url('/join');
+	$profile = site_url('/profile');
+	$home = site_url('/index');
+	$logout = site_url('/logout');
+
+?>
+	
 	<div class="container">
+	
+		<nav>
+			<img src="<?php echo base_url('img/topline.jpg'); ?>" alt="topline" width="109" height="173">
+			<p><a href="<?php echo $login; ?>" class="btn btn-primary btn-block">Sign In</a></p>
+			<p><a href="<?php echo $join; ?>" class="btn btn-block">Join Up</a></p>
+			<p><a href="<?php echo $home; ?>" class="btn btn-block">Home</a></p>
+			<p><a href="<?php echo $profile; ?>" class="btn btn-block">MyTopLine</a></p>
+			<p><a href="<?php echo $logout; ?>">Log Out</a></p>		
+		</nav>
+		
 		<header>
-		<img src="<?php echo base_url('img/topline.jpg'); ?>" alt="topline" width="109" height="173">
 			<h1>TopLine Press</h1>
 			<h2>Read, share, and talk about the most up-to-date news on the web.</h2>
 		</header>

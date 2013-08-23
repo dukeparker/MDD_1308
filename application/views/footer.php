@@ -1,10 +1,18 @@
+<?php
+
+	$this->load->helper('date');
+	
+	$datestring = "%Y";
+
+?>
+
 	</div> <!-- closing container from header -->
 
 	<footer>
 
 		<div class="container">
 			
-			&copy; TopLine Press - 2013.
+			<p>&copy; TopLine Press - <?php echo mdate($datestring); ?>.</p>
 
 		</div>
 										

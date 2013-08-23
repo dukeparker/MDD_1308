@@ -1,6 +1,6 @@
 <?php
 
-	class Index extends CI_Controller
+	class Pageup extends CI_Controller
 	{
 		public function __construct() {
 			
@@ -21,9 +21,9 @@
 			$data['articles'] = $this->Api_model->get_news();
 			$data['paginate'] = $this->Api_model->paginate_news();
 			
-			// Load the view
+			// Load the views
 			$this->load->view('header', $data);
-			$this->load->view('start', $data);			
+			$this->load->view('pageup', $data);			
 			$this->load->view('footer', $data);
 			
 			

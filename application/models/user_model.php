@@ -17,7 +17,7 @@
 		}
 
 		public function addUser($nickname, $email, $password) {
-
+			
 			$nickname = $this->db->escape($nickname);
 			$email = $this->db->escape($email);
 			$password = $this->db->escape($password);
