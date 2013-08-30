@@ -14,20 +14,21 @@
 		
 			$data['title'] = "Topline Press";
 
-			// Load the model
+			// Load the models
 			$this->load->model('Api_model');
+			$this->load->model('Like_model');			
 
-			// Call the method of the model
+			// Call the methods
 			$data['articles'] = $this->Api_model->get_news();
-			$data['paginate'] = $this->Api_model->paginate_news();
+			$data['like'] = $this->Like_model->get_likes();
 			
-			// Load the view
+			// Load the views
 			$this->load->view('header', $data);
 			$this->load->view('start', $data);			
 			$this->load->view('footer', $data);
 			
-			
-			
+			//push story data into database
+			$this->db->set('stories', $article_data);
 		} 
 
 	} // End of class

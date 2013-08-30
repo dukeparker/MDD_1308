@@ -1,8 +1,6 @@
 <section>
 	<?php
 	
-	$paginate = site_url('/pageup');
-
 	//loop through json response items	
 	foreach ($articles->results as $article){
 	
@@ -20,12 +18,25 @@
 				//call the description
 				echo "<p>" . $article->abstract . "</p>";
 				//call the link to the full story
-				echo "<p class='btn btn-primary'><a href='" . $article->url .  "' target='_blank'>Read More</a></p>";
+				echo "<p> <span class='btn btn-primary'><a href='" . $article->url .  "' target='_blank'>Read More</a></span> <span class='btn'><a href='#'>Like</a></span>" . $likes . "</p>";
+
 			echo "</div>";
 		echo "</div>";
+		
+		//setup database array
+		$article_data = array(
+			'id' => $article->id,
+			'image' => $article->media[0]->{"media-metadata"}[0]->url,
+			'body' => $article->abstract,
+			'title' => $article->title,
+			'link' => $article->url			
+		);
+		
+		$this->db->insert('stories', $article_data);
+
 	}
-	
-	//var_dump($articles->results[0]);
+		
+	var_dump($articles->results[0]);
 	
 	?>	
 	

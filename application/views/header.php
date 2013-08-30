@@ -41,5 +41,6 @@
 		
 		<header>
 			<h1>TopLine Press</h1>
-			<h2>Read, share, and talk about the most up-to-date news on the web.</h2>
+			<h2>Check out today's top headlines.</h2>
+			<h3>Powered by NYTimes.com</h3>
 		</header>
