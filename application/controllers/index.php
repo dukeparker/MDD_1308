@@ -19,7 +19,7 @@
 			$this->load->model('Like_model');			
 
 			// Call the methods
-			$data['articles'] = $this->Api_model->get_news();
+			$data['articles'] = $this->Api_model->get_most_viewed();
 			$data['like'] = $this->Like_model->get_likes();
 			
 			// Load the views
